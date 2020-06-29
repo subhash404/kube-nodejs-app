@@ -8,9 +8,9 @@
 
     docker build -t tagname:version .
 
-#Login to the docker/ECR with your creds
+# Login to the docker/ECR with your creds
 
-aws ecr get-login
+			aws ecr get-login
 
 	you will get the command and run it then automatically you will logged into the ecr
 
@@ -18,7 +18,7 @@ aws ecr get-login
 
 	enter docker login it will ask you your username and password 
 
-docker push tagname:version
+		docker push tagname:version
 
 # For pulling the images we need to create secret of AWS ECR that secret must be with the name aws-ecr because of we set imagepullsecret with that name
 
@@ -26,7 +26,12 @@ docker push tagname:version
 
 # For HPA we need  metric server for metric server execute the below command 
 
-kubectl create -f metric-server.yaml
+	kubectl create -f metric-server.yaml
+
+# Validate the Metric server by using the below command 
+
+	kubectl top nodes
+	kubectl top pods 
 
 
 # For nodejs Deployment run the Below command 
@@ -46,25 +51,25 @@ kubectl create -f metric-server.yaml
 
 # For Checking the pods always we have count of 7 or not we need to chaange the version of a nodejs image by using below command 
 
-kubectl set image deployment nodejs nodejs=subhash403/nodejs:v2 --record
+		kubectl set image deployment nodejs nodejs=subhash403/nodejs:v2 --record
 
 # then check the result by using below command 
 
-watch kubectl get pods 
+		watch kubectl get pods 
 
-#                            ANSIBLE
-#                            Kubernetes
+#  ------------------------  ANSIBLE ------------------------------------------------------------------------
+
 #                    Kubernetes Deployment using  ANSIBLE 
 
 
 # For build the Docker image by using Ansible if you want to change the image version change the variable of imagename in ansible_image_build.yaml
 
-ansible-playbook ansible_image_build.yaml
+			ansible-playbook ansible_image_build.yaml
 
 
 # For Create Deployment HPA service and pririty class you run the below ansible yaml
 
-ansible-playbook ansible_manifest.yaml
+			ansible-playbook ansible_manifest.yaml
 
 
 
