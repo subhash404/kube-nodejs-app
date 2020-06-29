@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  become: true
+  vars:
+     imagename: subhash403/nodejs:v3
+  tasks:
+    - name: Deployment nodejs
+      k8s:
+        state: present
+        src: ./Deployment.yaml 
+    - name: Service for nodejs 
+      k8s:
+        state: present
+        src: ./service.yaml
+    - name: Horizontal pod autoscaler 
+      k8s:
+        state: present
+        src: ./hpa.yaml
+
