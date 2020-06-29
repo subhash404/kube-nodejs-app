@@ -47,4 +47,19 @@ kubectl set image deployment nodejs nodejs=subhash403/nodejs:v2 --record
 
 watch kubectl get pods 
 
+#                            ANSIBLE
+#                            Kubernetes
+#                    Kubernetes Deployment using  ANSIBLE 
+
+
+# For build the Docker image by using Ansible if you want to change the image version change the variable of imagename in ansible_image_build.yaml
+
+ansible-playbook ansible_image_build.yaml
+
+
+# For Create Deployment HPA service and pririty class you run the below ansible yaml
+
+ansible-playbook ansible_manifest.yaml
+
+
 

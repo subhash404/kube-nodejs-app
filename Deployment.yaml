@@ -34,5 +34,6 @@ spec:
          limits:
            memory: "128Mi"
            cpu: "50m"
+      priorityClassName: high-priority
 
 
