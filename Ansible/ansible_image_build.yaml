@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  become: true
+  vars:
+     imagename: subhash403/nodejs:v3
+  tasks:
+    - name: build the image
+      command: docker build -t "{{ imagename }}" -f ../Dockerfile .
+    - name: push docker image to Repository 
+      command: docker push  "{{ imagename }}"
+

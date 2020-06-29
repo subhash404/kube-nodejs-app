@@ -7,13 +7,16 @@
     - name: Deployment nodejs
       k8s:
         state: present
-        src: ./Deployment.yaml 
+        src: ../Deployment.yaml 
     - name: Service for nodejs 
       k8s:
         state: present
-        src: ./service.yaml
+        src: ../service.yaml
     - name: Horizontal pod autoscaler 
       k8s:
         state: present
-        src: ./hpa.yaml
-
+        src: ../hpa.yaml
+    - name: Horizontal pod autoscaler
+      k8s:
+        state: present
+        src: ../priorityclass.yaml
