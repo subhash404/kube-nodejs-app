@@ -24,6 +24,11 @@ docker push tagname:version
 
         sh aws-ecr-login.sh
 
+# For HPA we need  metric server for metric server execute the below command 
+
+kubectl create -f metric-server.yaml
+
+
 # For nodejs Deployment run the Below command 
 
       kubectl create -f Deployment.yaml 
