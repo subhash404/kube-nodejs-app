@@ -70,4 +70,19 @@ For Create Deployment HPA service and pririty class you run the below ansible ya
 			ansible-playbook ansible_manifest.yaml
 
 
+###  ------------------------------------------  Terraform -------------------------------------------
+
+cd terraform_nodejs
+
+### For checking and validating the tf files bu using below command
+
+    terraform validate
+    terraform plan 
+
+
+### For creating the Deployments,service priority class and hpa by using below command with terraform 
+
+           terraform apply -auto-approve
+
+
 
