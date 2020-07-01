@@ -8,7 +8,6 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: nodejs
-    namespace: default
   minReplicas: 8
   maxReplicas: 10
   metrics:
@@ -23,4 +22,4 @@ spec:
       name: memory
       target:
         type: AverageValue
-        averageUtilization: 60
+        averageValue: 60
