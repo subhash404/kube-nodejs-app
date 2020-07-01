@@ -85,4 +85,6 @@ cd terraform_nodejs
            terraform apply -auto-approve
 
 
+####  You can find the Sample Metrics from 
 
+		load-test-metrics.txt
