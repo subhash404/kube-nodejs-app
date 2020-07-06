@@ -32,9 +32,9 @@ For HPA we need  metric server for metric server execute the below command
 	kubectl top pods 
 
 
- For nodejs Deployment run the Below command 
+For nodejs Priority class run the below command 
 
-      kubectl create -f Deployment.yaml 
+         kubectl create -f priorityclass.yaml
 
 For nodejs Service creation run the below command
 
@@ -45,6 +45,10 @@ For Autoscalling purpose need to create the HPA # Horizontalpod autoscaler kind 
            kubectl create -f hpa.yaml
 
 if you want to check the hpa increse the load on the nodejs container then it will automatically increase the pods 
+
+For nodejs Deployment run the Below command
+
+      kubectl create -f Deployment.yaml
 
 
 #### For Checking the pods always we have count of 7 or not we need to chaange the version of a nodejs image by using below command 
