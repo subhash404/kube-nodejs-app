@@ -1,5 +1,7 @@
  #  kube-nodejs-app
 
+# NOTE:- AS Per Your Requirement I just set Min pods as 7 why because when ever we are going to make a new deployment min purge pods are set to 1 so at that time also pods must be 7 
+
  For Node js Image Build 
 
     Dockerfile,package.json,package-lock.json,index.json are the files which are related to build the Docker image
@@ -66,6 +68,7 @@ For nodejs Deployment run the Below command
 
 ###### For build the Docker image by using Ansible if you want to change the image version change the variable of imagename in ansible_image_build.yaml
 
+                        cd Ansible
 			ansible-playbook ansible_image_build.yaml
 
 
@@ -79,7 +82,9 @@ For Create Deployment HPA service and pririty class you run the below ansible ya
 cd terraform_nodejs
 
 ### For checking and validating the tf files bu using below command
-
+	
+	
+    cd terraform_nodejs
     terraform validate
     terraform plan 
 

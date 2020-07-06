@@ -4,10 +4,6 @@
   vars:
      imagename: subhash403/nodejs:v3
   tasks:
-    - name: Deployment nodejs
-      k8s:
-        state: present
-        src: ../Deployment.yaml 
     - name: Service for nodejs 
       k8s:
         state: present
@@ -20,3 +16,8 @@
       k8s:
         state: present
         src: ../priorityclass.yaml
+    - name: Deployment nodejs
+      k8s:
+        state: present
+        src: ../Deployment.yaml
+
