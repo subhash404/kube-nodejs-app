@@ -1,6 +1,6 @@
  #  kube-nodejs-app
 
-# NOTE:- AS Per Your Requirement I just set Min pods as 7 why because when ever we are going to make a new deployment min purge pods are set to 1 so at that time also pods must be 7 
+# NOTE:- AS Per Your Requirement I just set Min pods as 8 why because when ever we are going to make a new deployment min purge pods are set to 1 so at that time also pods must be 7 
 
  For Node js Image Build 
 
