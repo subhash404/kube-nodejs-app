@@ -10,6 +10,8 @@ def call(body) {
   body.resolveStrategy = Closure.DELEGATE_FIRST
   body.delegate = config
   body()
+  println $config
+  println config
   print ${config}
   def path = config.srcDir
   def dockerfile = "Dockerfile"
