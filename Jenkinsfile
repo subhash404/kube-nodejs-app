@@ -20,17 +20,12 @@ def call(body) {
     path="./${config.srcDir}/"
     pathDir="./${config.srcDir}/"
   }
-  sh("sh templates/dockerfile_copy.sh ${config.templateType} ${pathDir} ${dockerfile}" )
-
-  if(env.JOB_NAME.contains('CSE-NODEJS-SIA'))
+  if(env.JOB_NAME.contains('DockerimageBuild'))
   {
-    sh("docker build -f ${path}Dockerfile --build-arg TARGET_PATH=${config.targetPath} -t sia/${config.appName}:${config.version} ${pathDir}")
+    sh("docker build -f Dockerfile -t subhash403/${config.appName}:${config.version}")
   }
   else
   {
     sh("docker build -f ${path}Dockerfile --build-arg TARGET_PATH=${config.targetPath} -t charter/${config.appName}:${config.version} ${pathDir}")
   }
-
-
-  sh("rm -rf ${path}Dockerfile")
 }
